@@ -116,6 +116,37 @@
     border-bottom-color: var(--gold);
     background: var(--gold-pale);
   }
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    z-index: 2;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 1px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+  nav.nav-open .nav-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  nav.nav-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  nav.nav-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 
   /* ── HERO ── */
   .hero {
@@ -689,7 +720,35 @@
     .life-grid, .alumni-inner, .contact-inner,
     .namesake-bio-grid { grid-template-columns: 1fr; }
     .namesake-pillars { grid-template-columns: 1fr 1fr; }
-    .nav-links { display: none; }
+    .nav-inner {
+      flex-wrap: wrap;
+      padding: 0 16px;
+      position: relative;
+    }
+    .nav-title-block strong { font-size: 0.92rem; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      list-style: none;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 12px 24px var(--shadow);
+      padding: 8px 0 12px;
+    }
+    nav.nav-open .nav-links { display: flex; }
+    .nav-links a {
+      padding: 14px 16px;
+      border-bottom: none;
+      margin-bottom: 0;
+      border-left: 3px solid transparent;
+    }
+    .nav-links a:hover {
+      border-bottom-color: transparent;
+      border-left-color: var(--gold);
+      background: var(--gold-pale);
+    }
     .topbar { font-size: 0.7rem; padding: 6px 20px; }
     section { padding: 60px 24px; }
     .hero { min-height: auto; padding: 60px 24px; }
@@ -883,7 +942,10 @@
         <strong>B. Ramlallah SSS</strong>
       </div>
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-menu">
       <li><a href="#about">About</a></li>
       <li><a href="#history">History</a></li>
       <li><a href="#namesake">Namesake</a></li>
@@ -1449,6 +1511,35 @@
 </script>
 
 <script>
+(function () {
+  const nav = document.querySelector('nav');
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelectorAll('.nav-links a');
+  if (!nav || !toggle) return;
+
+  function setOpen(open) {
+    nav.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!nav.classList.contains('nav-open'));
+  });
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function () { setOpen(false); });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setOpen(false);
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) setOpen(false);
+  });
+})();
+
 // ── GALLERY ENGINE ──────────────────────────────────────────────
 
 // Master photo array (editable — add real photos here later)
