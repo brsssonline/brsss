@@ -838,27 +838,15 @@
   }
   .overlay-caption .title { font-size: 0.88rem; font-weight: 600; line-height: 1.3; }
   .overlay-caption .date { font-size: 0.73rem; opacity: 0.75; margin-top: 2px; }
-
-  /* placeholder card for "add photo" */
-  .gallery-add {
-    border: 2px dashed var(--border);
-    border-radius: 10px;
-    aspect-ratio: 1 / 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-    background: var(--cream);
+  .gallery-empty {
+    text-align: center;
     color: var(--text-light);
-    gap: 8px;
-    position: relative;
+    font-size: 0.95rem;
+    padding: 48px 20px;
+    border: 1.5px dashed var(--border);
+    border-radius: 8px;
+    margin-top: 8px;
   }
-  .gallery-add:hover { border-color: var(--navy); background: var(--gold-pale); color: var(--navy); }
-  .gallery-add .plus-icon { font-size: 2rem; }
-  .gallery-add .add-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
-  .gallery-add input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width:100%; height:100%; }
 
   /* Lightbox */
   .lightbox {
@@ -910,11 +898,6 @@
   .lightbox-nav:hover { background: rgba(196,154,0,0.3); }
   .lightbox-prev { left: 18px; }
   .lightbox-next { right: 18px; }
-  .gallery-load-more {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
 
   @media (max-width: 900px) {
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1207,96 +1190,10 @@
         <button class="filter-btn" data-filter="environment">Environment</button>
         <button class="filter-btn" data-filter="celebrations">Celebrations</button>
       </div>
-      <label class="btn btn-gold" style="cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-size:0.82rem;">
-        📷 Add Photo
-        <input type="file" accept="image/*" multiple style="display:none;" id="galleryUpload">
-      </label>
     </div>
 
-    <div class="gallery-grid" id="galleryGrid">
-      <!-- SLOT 1 – wide featured -->
-      <div class="gallery-item wide reveal" data-cat="events" data-title="School Inauguration Ceremony" data-date="27 May 2005" onclick="openLightbox(0)">
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,#0d2b5e 0%,#1b4080 50%,#c49a00 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
-          <span style="font-size:3rem;">🏫</span>
-          <span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:500;">School Inauguration</span>
-        </div>
-        <div class="overlay"><div class="overlay-caption"><span class="cat">Events</span><div class="title">School Inauguration Ceremony</div><div class="date">27 May 2005</div></div></div>
-      </div>
-
-      <!-- SLOT 2 -->
-      <div class="gallery-item reveal" data-cat="academic" data-title="Cambridge Top 500 Achievement" data-date="2019" onclick="openLightbox(1)">
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a4a1a,#2e7d2e);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
-          <span style="font-size:2.5rem;">🏆</span>
-          <span style="color:rgba(255,255,255,0.7);font-size:0.8rem;font-weight:500;text-align:center;padding:0 12px;">Cambridge Top 500</span>
-        </div>
-        <div class="overlay"><div class="overlay-caption"><span class="cat">Academic</span><div class="title">Cambridge Top 500 Achievement</div><div class="date">2019</div></div></div>
-      </div>
-
-      <!-- SLOT 3 -->
-      <div class="gallery-item reveal" data-cat="environment" data-title="Mon Choisy Beach Cleanup" data-date="Recent" onclick="openLightbox(2)">
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,#0a4a5e,#0e7490);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
-          <span style="font-size:2.5rem;">🌊</span>
-          <span style="color:rgba(255,255,255,0.7);font-size:0.8rem;font-weight:500;text-align:center;padding:0 12px;">Beach Cleanup · Mon Choisy</span>
-        </div>
-        <div class="overlay"><div class="overlay-caption"><span class="cat">Environment</span><div class="title">Mon Choisy Beach Cleanup</div><div class="date">Recent</div></div></div>
-      </div>
-
-      <!-- SLOT 4 – tall -->
-      <div class="gallery-item tall reveal" data-cat="events" data-title="Prize Giving Ceremony" data-date="Annual" onclick="openLightbox(3)">
-        <div style="width:100%;height:100%;background:linear-gradient(160deg,#3d1a5e,#6b21a8);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
-          <span style="font-size:2.5rem;">🎖️</span>
-          <span style="color:rgba(255,255,255,0.7);font-size:0.8rem;font-weight:500;text-align:center;padding:0 12px;">Prize Giving Ceremony</span>
-        </div>
-        <div class="overlay"><div class="overlay-caption"><span class="cat">Events</span><div class="title">Prize Giving Ceremony</div><div class="date">Annual</div></div></div>
-      </div>
-
-      <!-- SLOT 5 -->
-      <div class="gallery-item reveal" data-cat="sports" data-title="Inter-School Sports Day" data-date="Annual" onclick="openLightbox(4)">
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,#7c2d12,#c2410c);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
-          <span style="font-size:2.5rem;">⚽</span>
-          <span style="color:rgba(255,255,255,0.7);font-size:0.8rem;font-weight:500;text-align:center;padding:0 12px;">Inter-School Sports Day</span>
-        </div>
-        <div class="overlay"><div class="overlay-caption"><span class="cat">Sports</span><div class="title">Inter-School Sports Day</div><div class="date">Annual</div></div></div>
-      </div>
-
-      <!-- SLOT 6 -->
-      <div class="gallery-item reveal" data-cat="celebrations" data-title="Renaming Anniversary" data-date="14 March" onclick="openLightbox(5)">
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,#854d0e,#ca8a04);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
-          <span style="font-size:2.5rem;">🎉</span>
-          <span style="color:rgba(255,255,255,0.7);font-size:0.8rem;font-weight:500;text-align:center;padding:0 12px;">Renaming Anniversary</span>
-        </div>
-        <div class="overlay"><div class="overlay-caption"><span class="cat">Celebrations</span><div class="title">Renaming Anniversary · 14 March</div><div class="date">Annual</div></div></div>
-      </div>
-
-      <!-- SLOT 7 -->
-      <div class="gallery-item reveal" data-cat="academic" data-title="Computer Science Lab" data-date="Recent" onclick="openLightbox(6)">
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,#0f172a,#1e3a5f);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
-          <span style="font-size:2.5rem;">💻</span>
-          <span style="color:rgba(255,255,255,0.7);font-size:0.8rem;font-weight:500;text-align:center;padding:0 12px;">Computer Science Lab</span>
-        </div>
-        <div class="overlay"><div class="overlay-caption"><span class="cat">Academic</span><div class="title">Computer Science Lab</div><div class="date">Recent</div></div></div>
-      </div>
-
-      <!-- SLOT 8 -->
-      <div class="gallery-item wide reveal" data-cat="events" data-title="School Assembly" data-date="Weekly" onclick="openLightbox(7)">
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,#0d2b5e,#2756a8);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
-          <span style="font-size:2.5rem;">🏫</span>
-          <span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:500;">School Assembly</span>
-        </div>
-        <div class="overlay"><div class="overlay-caption"><span class="cat">Events</span><div class="title">School Assembly</div><div class="date">Weekly</div></div></div>
-      </div>
-
-      <!-- ADD PHOTO CARD -->
-      <div class="gallery-add reveal" id="addPhotoCard">
-        <span class="plus-icon">📷</span>
-        <span class="add-label">Add Photos</span>
-        <input type="file" accept="image/*" multiple id="galleryUpload2">
-      </div>
-    </div>
-
-    <div class="gallery-load-more reveal">
-      <button class="btn btn-primary" id="loadMoreBtn" style="display:none;">Load More Photos</button>
-    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <p class="gallery-empty" id="galleryEmpty" hidden>Photos will appear here once they are added to the school gallery.</p>
   </div>
 </section>
 
@@ -1541,23 +1438,60 @@
 })();
 
 // ── GALLERY ENGINE ──────────────────────────────────────────────
+// Photos come from gallery.json + files in images/gallery/ (no public upload).
 
-// Master photo array (editable — add real photos here later)
-let photos = [
-  { src: null, title: 'School Inauguration Ceremony',   date: '27 May 2005', cat: 'events',      placeholder: '🏫' },
-  { src: null, title: 'Cambridge Top 500 Achievement',  date: '2019',         cat: 'academic',    placeholder: '🏆' },
-  { src: null, title: 'Mon Choisy Beach Cleanup',       date: 'Recent',       cat: 'environment', placeholder: '🌊' },
-  { src: null, title: 'Prize Giving Ceremony',          date: 'Annual',       cat: 'events',      placeholder: '🎖️' },
-  { src: null, title: 'Inter-School Sports Day',        date: 'Annual',       cat: 'sports',      placeholder: '⚽' },
-  { src: null, title: 'Renaming Anniversary',           date: '14 March',     cat: 'celebrations',placeholder: '🎉' },
-  { src: null, title: 'Computer Science Lab',           date: 'Recent',       cat: 'academic',    placeholder: '💻' },
-  { src: null, title: 'School Assembly',                date: 'Weekly',       cat: 'events',      placeholder: '🏫' },
-];
-
+let photos = [];
 let currentIndex = 0;
 let activeFilter = 'all';
 
-// ── Filter buttons ──
+const CAT_LABELS = {
+  events: 'Events',
+  sports: 'Sports',
+  academic: 'Academic',
+  environment: 'Environment',
+  celebrations: 'Celebrations'
+};
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function renderGallery() {
+  const grid = document.getElementById('galleryGrid');
+  const empty = document.getElementById('galleryEmpty');
+  grid.innerHTML = '';
+
+  if (!photos.length) {
+    empty.hidden = false;
+    return;
+  }
+  empty.hidden = true;
+
+  photos.forEach((p, idx) => {
+    const layout = p.layout === 'wide' || p.layout === 'tall' ? p.layout : '';
+    const item = document.createElement('div');
+    item.className = 'gallery-item reveal visible' + (layout ? ' ' + layout : '');
+    item.dataset.cat = p.cat || 'events';
+    item.dataset.title = p.title || '';
+    item.dataset.date = p.date || '';
+    item.setAttribute('onclick', 'openLightbox(' + idx + ')');
+    const catLabel = CAT_LABELS[p.cat] || p.cat || '';
+    item.innerHTML =
+      '<img src="' + escapeHtml(p.src) + '" alt="' + escapeHtml(p.title || '') + '">' +
+      '<div class="overlay"><div class="overlay-caption">' +
+      '<span class="cat">' + escapeHtml(catLabel) + '</span>' +
+      '<div class="title">' + escapeHtml(p.title || '') + '</div>' +
+      '<div class="date">' + escapeHtml(p.date || '') + '</div>' +
+      '</div></div>';
+    grid.appendChild(item);
+  });
+  applyFilter();
+}
+
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1575,15 +1509,13 @@ function applyFilter() {
   });
 }
 
-// ── Lightbox ──
 function filteredPhotos() {
   return activeFilter === 'all' ? photos : photos.filter(p => p.cat === activeFilter);
 }
 
 function openLightbox(globalIndex) {
-  const fp = filteredPhotos();
-  // find position in filtered list
   const ph = photos[globalIndex];
+  const fp = filteredPhotos();
   const fi = fp.indexOf(ph);
   currentIndex = fi >= 0 ? fi : 0;
   showLightboxPhoto();
@@ -1596,15 +1528,10 @@ function showLightboxPhoto() {
   const p = fp[currentIndex];
   if (!p) return;
   const img = document.getElementById('lightboxImg');
-  if (p.src) {
-    img.src = p.src;
-    img.style.display = '';
-  } else {
-    img.src = '';
-    img.style.display = 'none';
-  }
-  document.getElementById('lightboxTitle').textContent = p.title;
-  document.getElementById('lightboxDate').textContent = p.date;
+  img.src = p.src || '';
+  img.style.display = p.src ? '' : 'none';
+  document.getElementById('lightboxTitle').textContent = p.title || '';
+  document.getElementById('lightboxDate').textContent = p.date || '';
 }
 
 function closeLightbox() {
@@ -1614,6 +1541,7 @@ function closeLightbox() {
 
 function navLightbox(dir) {
   const fp = filteredPhotos();
+  if (!fp.length) return;
   currentIndex = (currentIndex + dir + fp.length) % fp.length;
   showLightboxPhoto();
 }
@@ -1630,50 +1558,21 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') navLightbox(1);
 });
 
-// ── Upload handler ──
-function handleUpload(files) {
-  Array.from(files).forEach(file => {
-    if (!file.type.startsWith('image/')) return;
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const src = e.target.result;
-      // Prompt for details
-      const title = prompt('Caption / Event name for this photo:', file.name.replace(/\.[^.]+$/, '')) || file.name;
-      const cats  = ['events','sports','academic','environment','celebrations'];
-      const catIn = prompt('Category:\n1. events\n2. sports\n3. academic\n4. environment\n5. celebrations\n\nEnter number (1-5):', '1');
-      const cat   = cats[(parseInt(catIn) || 1) - 1] || 'events';
-      const date  = prompt('Date / Year:', new Date().getFullYear().toString()) || '';
-
-      photos.push({ src, title, date, cat, placeholder: '🖼️' });
-
-      // Add card to grid
-      const grid = document.getElementById('galleryGrid');
-      const addCard = document.getElementById('addPhotoCard');
-      const item = document.createElement('div');
-      item.className = 'gallery-item visible';
-      item.dataset.cat   = cat;
-      item.dataset.title = title;
-      item.dataset.date  = date;
-      const idx = photos.length - 1;
-      item.setAttribute('onclick', `openLightbox(${idx})`);
-      item.innerHTML = `
-        <img src="${src}" alt="${title}" style="width:100%;height:100%;object-fit:cover;">
-        <div class="overlay"><div class="overlay-caption">
-          <span class="cat">${cat}</span>
-          <div class="title">${title}</div>
-          <div class="date">${date}</div>
-        </div></div>`;
-      grid.insertBefore(item, addCard);
-
-      // Re-apply filter
-      applyFilter();
-    };
-    reader.readAsDataURL(file);
+fetch('gallery.json')
+  .then(r => {
+    if (!r.ok) throw new Error('Could not load gallery.json');
+    return r.json();
+  })
+  .then(data => {
+    photos = Array.isArray(data)
+      ? data.filter(p => p && p.src)
+      : [];
+    renderGallery();
+  })
+  .catch(() => {
+    photos = [];
+    renderGallery();
   });
-}
-
-document.getElementById('galleryUpload').addEventListener('change',  e => handleUpload(e.target.files));
-document.getElementById('galleryUpload2').addEventListener('change', e => handleUpload(e.target.files));
 
 </script>
 
