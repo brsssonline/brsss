@@ -1,18 +1,42 @@
-[
-  { "src": "images/gallery/IMG-20260714-WA0006.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG-20260714-WA0008.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG-20260714-WA0009.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG-20260714-WA0010.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG-20260714-WA0014.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG-20260714-WA0015.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG-20260714-WA0017.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG-20260714-WA0018.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG-20260714-WA0022.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG-20260714-WA0025.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG-20260714-WA0027.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG_20260714_100520.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "wide" },
-  { "src": "images/gallery/IMG_20260714_100738.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG_20260714_102211.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG_20260714_102303.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "" },
-  { "src": "images/gallery/IMG_20260714_120756.jpg", "title": "Cross Country", "date": "14 July 2026", "cat": "sports", "layout": "wide" }
-]
+{
+  "events": [
+    {
+      "name": "ChemistryExams",
+      "photos": [
+        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.06.jpeg",
+        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.07.jpeg",
+        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.08.jpeg",
+        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.09.jpeg"
+      ]
+    },
+    {
+      "name": "CrossCountry",
+      "photos": [
+        "images/gallery/CrossCountry/IMG-20260714-WA0006.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0008.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0009.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0010.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0014.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0015.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0017.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0018.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0022.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0025.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0027.jpg",
+        "images/gallery/CrossCountry/IMG_20260714_100520.jpg",
+        "images/gallery/CrossCountry/IMG_20260714_100738.jpg",
+        "images/gallery/CrossCountry/IMG_20260714_102303.jpg"
+      ]
+    },
+    {
+      "name": "InteractClub_Rotary_International",
+      "photos": [
+        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 18.47.15.jpeg",
+        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 18.47.17.jpeg",
+        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 18.47.19.jpeg",
+        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 19.06.42.jpeg",
+        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 19.06.43.jpeg"
+      ]
+    }
+  ]
+}
