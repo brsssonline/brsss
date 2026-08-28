@@ -1,47 +1,7 @@
 {
   "events": [
     {
-      "name": "ChemistryExams",
-      "photos": [
-        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.06.jpeg",
-        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.07.jpeg",
-        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.08.jpeg",
-        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.09.jpeg"
-      ]
-    },
-    {
-      "name": "CrossCountry",
-      "photos": [
-        "images/gallery/CrossCountry/IMG-20260714-WA0006.jpg",
-        "images/gallery/CrossCountry/IMG-20260714-WA0008.jpg",
-        "images/gallery/CrossCountry/IMG-20260714-WA0009.jpg",
-        "images/gallery/CrossCountry/IMG-20260714-WA0010.jpg",
-        "images/gallery/CrossCountry/IMG-20260714-WA0014.jpg",
-        "images/gallery/CrossCountry/IMG-20260714-WA0015.jpg",
-        "images/gallery/CrossCountry/IMG-20260714-WA0017.jpg",
-        "images/gallery/CrossCountry/IMG-20260714-WA0018.jpg",
-        "images/gallery/CrossCountry/IMG-20260714-WA0022.jpg",
-        "images/gallery/CrossCountry/IMG-20260714-WA0025.jpg",
-        "images/gallery/CrossCountry/IMG-20260714-WA0027.jpg",
-        "images/gallery/CrossCountry/IMG_20260714_100520.jpg",
-        "images/gallery/CrossCountry/IMG_20260714_100738.jpg",
-        "images/gallery/CrossCountry/IMG_20260714_102211.jpg",
-        "images/gallery/CrossCountry/IMG_20260714_102303.jpg",
-        "images/gallery/CrossCountry/IMG_20260714_120756.jpg"
-      ]
-    },
-    {
-      "name": "InteractClub_Rotary_International",
-      "photos": [
-        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 18.47.15.jpeg",
-        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 18.47.17.jpeg",
-        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 18.47.19.jpeg",
-        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 19.06.42.jpeg",
-        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 19.06.43.jpeg"
-      ]
-    },
-    {
-      "name": "Prize",
+      "name": "Prize Giving Day 2026",
       "photos": [
         "images/gallery/Prize/IMG_20260827_085818.jpg",
         "images/gallery/Prize/IMG_20260827_085820.jpg",
@@ -137,6 +97,46 @@
         "images/gallery/Prize/IMG_20260827_103700.jpg",
         "images/gallery/Prize/IMG_20260827_103701.jpg",
         "images/gallery/Prize/IMG_20260827_103713.jpg"
+      ]
+    },
+    {
+      "name": "ChemistryExams",
+      "photos": [
+        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.06.jpeg",
+        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.07.jpeg",
+        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.08.jpeg",
+        "images/gallery/ChemistryExams/WhatsApp Image 2026-07-14 at 18.08.09.jpeg"
+      ]
+    },
+    {
+      "name": "CrossCountry",
+      "photos": [
+        "images/gallery/CrossCountry/IMG-20260714-WA0006.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0008.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0009.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0010.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0014.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0015.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0017.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0018.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0022.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0025.jpg",
+        "images/gallery/CrossCountry/IMG-20260714-WA0027.jpg",
+        "images/gallery/CrossCountry/IMG_20260714_100520.jpg",
+        "images/gallery/CrossCountry/IMG_20260714_100738.jpg",
+        "images/gallery/CrossCountry/IMG_20260714_102211.jpg",
+        "images/gallery/CrossCountry/IMG_20260714_102303.jpg",
+        "images/gallery/CrossCountry/IMG_20260714_120756.jpg"
+      ]
+    },
+    {
+      "name": "InteractClub_Rotary_International",
+      "photos": [
+        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 18.47.15.jpeg",
+        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 18.47.17.jpeg",
+        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 18.47.19.jpeg",
+        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 19.06.42.jpeg",
+        "images/gallery/InteractClub_Rotary_International/WhatsApp Image 2026-07-14 at 19.06.43.jpeg"
       ]
     }
   ]
