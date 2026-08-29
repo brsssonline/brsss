@@ -1,1 +1,11 @@
 .DS_Store
+
+# Local staging folder for event videos (upload to YouTube, not GitHub)
+Prize/
+
+# Video files must never be committed — host on YouTube instead
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
